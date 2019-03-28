@@ -13,6 +13,7 @@ result=cv2.matchTemplate(imageGrey,templateGrey,cv2.TM_SQDIFF_NORMED)
 #finding the occurences of the template
 threshold=0.0135
 templateHeight,templateWidth= templateGrey.shape[::1]
+#checking the normalized squared difference value is smaller than threshold value so thats its closer to the template or equal to the template
 location=np.where(result <= threshold)
 
 #drawing the rectangle
